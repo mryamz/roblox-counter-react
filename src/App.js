@@ -5,7 +5,7 @@ const axios = require('axios');
 function App() {
 
   const getSig = (address, nonce) => {
-    Axios.get(`https://3dq0uoq813.execute-api.us-east-1.amazonaws.com/users/${address}/${nonce}`).then(response => {
+    axios.get(`https://3dq0uoq813.execute-api.us-east-1.amazonaws.com/users/${address}/${nonce}`).then(response => {
       const {sig} = response.data;
       console.log("FROM API: ")
       console.log(sig)

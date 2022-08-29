@@ -5,7 +5,12 @@ const axios = require('axios');
 function App() {
 
   const getSig = (address, nonce) => {
-    axios.get(`https://3dq0uoq813.execute-api.us-east-1.amazonaws.com/users/${address}/${nonce}`).then(response => {
+    axios.get(`https://3dq0uoq813.execute-api.us-east-1.amazonaws.com/users/${address}/${nonce}`, {
+      headers: {
+        'Access-Control-Allow-Origin' : '*',
+        'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+      }
+    }).then(response => {
       const {sig} = response.data;
       console.log("FROM API: ")
       console.log(sig)

@@ -11,7 +11,7 @@ function SigEntry({ sigs }) {
     return sigs.map((sig, index) => (
         <div>
             <button onClick={() => handleSigClick(sig)}>
-                {`${sig}`}
+                {`${sig[0]} ${sig[1]}`}
             </button>
         </div>
         )

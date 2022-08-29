@@ -47,10 +47,11 @@ function Forum({ onHitAPI }) {
 
         try {
             const response = await axios.get(`https://3dq0uoq813.execute-api.us-east-1.amazonaws.com/users/${accountAddress}/${nonce}`);
-            const { sig } = response.data;
-            setsigs([sig ? sig : 'bad api call', ...sigs])
+            const { sig, amount } = response.data;
+            const newSig = [amount, sig];
+            setsigs([newSig ? newSig : 'bad api call', ...sigs])
         } catch (error) {
-            setsigs([error, ...sigs])
+            setsigs([[error], ...sigs])
         }
     }
 

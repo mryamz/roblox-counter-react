@@ -3,7 +3,7 @@ import SigEntry from "./SigEntry";
 const axios = require('axios');
 
 
-function Forum({ onHitAPI }) {
+function Forum({}) {
     const [nonce, setNonce] = useState('');
     const [haveMetamask, sethaveMetamask] = useState(true);
     const [isConnected, setIsConnected] = useState(false);
